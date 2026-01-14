@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Propagande d’équipe — Agenda</title>
+  <meta name="description" content="Agenda : réunions, rencontres, échanges. Tous les événements à venir, accessibles et lisibles." />
+
+  <link rel="canonical" href="https://ton-domaine.fr/agenda.html" />
+  <meta property="og:title" content="Propagande d’équipe — Agenda" />
+  <meta property="og:description" content="Réunions et événements à venir." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Propagande d’équipe</strong>
+          <span>Une commune qui avance, ensemble</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+        Ouvrir le menu
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="programme.html">Programme</a>
+        <a href="agenda.html" aria-current="page">Agenda</a>
+        <a href="chasneens.html">Les Chasnéen·ne·s</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="hero" aria-labelledby="titre">
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">Agenda • Rencontres & réunions</p>
+          <h1 id="titre">Venez échanger avec l’équipe</h1>
+          <p class="lead">
+            Tous les événements à venir. Cette liste est conçue pour être lisible au clavier,
+            au lecteur d’écran, et facilement partageable.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="contact.html">Poser une question</a>
+            <a class="btn" href="programme.html">Lire le programme</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Information">
+          <h2>Astuce</h2>
+          <p class="small">
+            Tu pourras ensuite alimenter cette page avec un fichier <code>data/agenda.json</code>
+            (toujours sans backend).
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="liste">
+      <h2 class="section__title" id="liste">Événements à venir</h2>
+
+      <div class="list" role="list">
+        <article class="item" role="listitem" aria-label="Événement 1">
+          <div>
+            <strong>Réunion publique — Salle des fêtes</strong>
+            <span>Chasné-sur-Illet • Présentation & questions/réponses</span>
+          </div>
+          <div style="text-align:right">
+            <strong>2026-02-01</strong>
+            <span>18:30</span>
+          </div>
+        </article>
+
+        <article class="item" role="listitem" aria-label="Événement 2">
+          <div>
+            <strong>Rencontre citoyenne — Marché</strong>
+            <span>Centre-ville • Échange libre</span>
+          </div>
+          <div style="text-align:right">
+            <strong>2026-02-08</strong>
+            <span>10:00</span>
+          </div>
+        </article>
+
+        <article class="item" role="listitem" aria-label="Événement 3">
+          <div>
+            <strong>Porte-à-porte — Quartier Nord</strong>
+            <span>Point de départ : Mairie • Écoute des habitants</span>
+          </div>
+          <div style="text-align:right">
+            <strong>2026-02-15</strong>
+            <span>09:30</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> — Propagande d’équipe</p>
+      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

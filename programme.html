@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Propagande d’équipe — Programme</title>
+  <meta name="description" content="Programme : priorités, engagements et actions. Une présentation claire, accessible et structurée." />
+
+  <link rel="canonical" href="https://ton-domaine.fr/programme.html" />
+  <meta property="og:title" content="Propagande d’équipe — Programme" />
+  <meta property="og:description" content="Priorités, engagements et actions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Propagande d’équipe</strong>
+          <span>Une commune qui avance, ensemble</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+        Ouvrir le menu
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="programme.html" aria-current="page">Programme</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="chasneens.html">Les Chasnéen·ne·s</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="hero" aria-labelledby="titre">
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">Programme • Version de travail</p>
+          <h1 id="titre">Des priorités claires et des engagements mesurables</h1>
+          <p class="lead">
+            Objectif : présenter un programme lisible. Chaque thème peut être structuré en
+            <strong>Objectif → Actions → Indicateurs</strong>.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="contact.html">Proposer une idée</a>
+            <a class="btn" href="agenda.html">Participer à une réunion</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Encadré de résumé">
+          <h2>Résumé</h2>
+          <p class="small">
+            Cette page est un modèle : elle sera remplie avec les mesures finales.
+            Elle est déjà structurée pour le référencement et l’accessibilité.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="themes">
+      <h2 class="section__title" id="themes">Thèmes</h2>
+
+      <div class="grid-3" role="list">
+        <article class="card" role="listitem">
+          <h3>Cadre de vie</h3>
+          <p>Objectif : améliorer le quotidien (espaces publics, propreté, sécurité…).</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Mobilité</h3>
+          <p>Objectif : faciliter les déplacements (piétons, vélos, circulation…).</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <h3>Solidarité</h3>
+          <p>Objectif : renforcer l’entraide (aînés, inclusion, services…).</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="exemple">
+      <h2 class="section__title" id="exemple">Exemple de présentation “mesurable”</h2>
+
+      <article class="card" aria-labelledby="t1">
+        <h3 id="t1">Thème : Cadre de vie</h3>
+        <p><strong>Objectif :</strong> rendre l’espace public plus agréable et plus sûr.</p>
+        <p><strong>Actions :</strong></p>
+        <ul>
+          <li>Plan annuel de petites améliorations (éclairage, signalisation, propreté).</li>
+          <li>Canal de remontée des besoins (réunions + formulaire de contact).</li>
+          <li>Communication des avancées (page “Actualités” possible plus tard).</li>
+        </ul>
+        <p><strong>Indicateurs :</strong></p>
+        <ul>
+          <li>Nombre d’actions réalisées / trimestre</li>
+          <li>Délais moyens de traitement des retours</li>
+          <li>Satisfaction via consultation (si mise en place)</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> — Propagande d’équipe</p>
+      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

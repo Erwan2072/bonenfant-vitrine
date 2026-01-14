@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Propagande d’équipe — Contact</title>
+  <meta name="description" content="Contact : écrire à l’équipe, proposer une idée, signaler un besoin. Formulaire accessible sans backend." />
+
+  <link rel="canonical" href="https://ton-domaine.fr/contact.html" />
+  <meta property="og:title" content="Propagande d’équipe — Contact" />
+  <meta property="og:description" content="Écrire à l’équipe, proposer une idée." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Propagande d’équipe</strong>
+          <span>Une commune qui avance, ensemble</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+        Ouvrir le menu
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="programme.html">Programme</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="chasneens.html">Les Chasnéen·ne·s</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="hero" aria-labelledby="titre">
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">Contact • Sans backend</p>
+          <h1 id="titre">Nous écrire</h1>
+          <p class="lead">
+            Ce formulaire est conçu pour être navigable au clavier, compatible lecteurs d’écran,
+            et utilisable en contrôle vocal (labels visibles).
+          </p>
+        </div>
+
+        <aside class="card" aria-label="Info sur l’envoi">
+          <h2>Important</h2>
+          <p class="small">
+            Sans backend, l’envoi se fait via le client mail (mailto). Plus tard, si besoin,
+            tu pourras utiliser un service externe (Formspree) sans serveur.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="form">
+      <h2 class="section__title" id="form">Formulaire</h2>
+
+      <div class="card">
+        <form id="contactForm" aria-describedby="aide">
+          <p id="aide" class="small" style="margin-top:0;color:var(--muted);">
+            Les champs marqués * sont obligatoires.
+          </p>
+
+          <div class="field">
+            <label for="name">Nom *</label>
+            <input id="name" name="name" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" autocomplete="email" required />
+          </div>
+
+          <div class="field">
+            <label for="subject">Sujet</label>
+            <input id="subject" name="subject" autocomplete="off" />
+          </div>
+
+          <div class="field">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="alternatives">
+      <h2 class="section__title" id="alternatives">Autres moyens</h2>
+      <div class="grid-3" role="list">
+        <article class="card" role="listitem">
+          <h3>Accessibilité</h3>
+          <p>Tu peux ajouter ici un numéro dédié, ou un canal adapté (SMS/WhatsApp) si souhaité.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Horaires</h3>
+          <p>Indiquer des horaires d’écoute ou de permanence (si prévu).</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Réseaux</h3>
+          <p>Ajouter des liens vers les réseaux (avec libellés explicites).</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> — Propagande d’équipe</p>
+      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

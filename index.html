@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Propagande d’équipe — Accueil</title>
+  <meta name="description" content="Site vitrine : programme, agenda, actualités et contact. Accessible, moderne et rapide." />
+
+  <link rel="canonical" href="https://ton-domaine.fr/" />
+  <meta property="og:title" content="Propagande d’équipe" />
+  <meta property="og:description" content="Programme, agenda, et informations utiles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__logo" aria-hidden="true"></span>
+        <span class="brand__text">
+          <strong>Propagande d’équipe</strong>
+          <span>Une commune qui avance, ensemble</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+        Ouvrir le menu
+      </button>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <a href="index.html" aria-current="page">Accueil</a>
+        <a href="programme.html">Programme</a>
+        <a href="agenda.html">Agenda</a>
+        <a href="chasneens.html">Les Chasnéen·ne·s</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="container">
+    <section class="hero" aria-labelledby="titre">
+      <div class="hero__grid">
+        <div>
+          <p class="kicker">Municipales 2026 • Site vitrine</p>
+          <h1 id="titre">Une équipe, une vision, des actions concrètes.</h1>
+          <p class="lead">
+            Texte provisoire. L’idée : un message clair, lisible, et accessible à tous.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="programme.html">Découvrir le programme</a>
+            <a class="btn" href="agenda.html">Voir l’agenda</a>
+            <a class="btn" href="contact.html">Nous écrire</a>
+          </div>
+
+          <div class="grid-3" role="list">
+            <article class="card" role="listitem">
+              <h2>Proximité</h2>
+              <p>Rencontres régulières et décisions expliquées simplement.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h2>Transparence</h2>
+              <p>Engagements suivis, informations accessibles, démarche claire.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h2>Action</h2>
+              <p>Mesures réalistes, planifiées, évaluables.</p>
+            </article>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Encadré d’information">
+          <h2>Infos rapides</h2>
+          <p class="small">Ajoute ici : une citation, un chiffre, ou le prochain rendez-vous.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="seo">
+      <h2 class="section__title" id="seo">Accessibilité & informations</h2>
+      <div class="card">
+        <p>
+          Ce site est conçu pour être navigable au clavier, compatible lecteurs d’écran,
+          avec des contrastes forts et des contenus structurés.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> — Propagande d’équipe</p>
+      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
