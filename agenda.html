@@ -4,33 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Propagande d’équipe — Agenda</title>
-  <meta name="description" content="Agenda : réunions, rencontres, échanges. Tous les événements à venir, accessibles et lisibles." />
+  <title>Réussir Chasné 2026 — Agenda</title>
+  <meta name="description" content="Agenda Réussir Chasné 2026 : réunions, rencontres et échanges. Calendrier mis à jour automatiquement via Google Agenda." />
 
+  <!-- Canonical : à remplacer par ton URL finale -->
   <link rel="canonical" href="https://ton-domaine.fr/agenda.html" />
-  <meta property="og:title" content="Propagande d’équipe — Agenda" />
-  <meta property="og:description" content="Réunions et événements à venir." />
+
+  <meta property="og:title" content="Réussir Chasné 2026 — Agenda" />
+  <meta property="og:description" content="Réunions, rencontres et échanges. Consultez les prochains rendez-vous." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body class="p-agenda">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Réussir Chasné 2026, retour à l’accueil">
         <span class="brand__logo" aria-hidden="true"></span>
         <span class="brand__text">
-          <strong>Propagande d’équipe</strong>
-          <span>Une commune qui avance, ensemble</span>
+          <strong>Réussir Chasné 2026</strong>
+          <span>Liste sans étiquette • Municipales 2026</span>
         </span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
         Ouvrir le menu
       </button>
 
@@ -51,31 +54,59 @@
           <p class="kicker">Agenda • Rencontres & réunions</p>
           <h1 id="titre">Venez échanger avec l’équipe</h1>
           <p class="lead">
-            Tous les événements à venir. Cette liste est conçue pour être lisible au clavier,
-            au lecteur d’écran, et facilement partageable.
+            Retrouvez ici les prochains rendez-vous. Le calendrier est mis à jour automatiquement
+            lorsque l’agenda Google est modifié.
           </p>
 
-          <div class="actions">
+          <div class="actions" aria-label="Actions principales">
             <a class="btn btn--primary" href="contact.html">Poser une question</a>
             <a class="btn" href="programme.html">Lire le programme</a>
+            <a class="btn" href="mailto:reussirchasne2026@gmail.com">Écrire à l’équipe</a>
           </div>
         </div>
 
-        <aside class="card" aria-label="Information">
-          <h2>Astuce</h2>
-          <p class="small">
-            Tu pourras ensuite alimenter cette page avec un fichier <code>data/agenda.json</code>
-            (toujours sans backend).
+        <aside class="card" aria-label="Contact rapide">
+          <h2>Contact</h2>
+          <p class="small" style="margin:0 0 10px;color:var(--muted)">
+            Vous souhaitez organiser une rencontre ou proposer un point à aborder ?
+          </p>
+          <p style="margin:0">
+            <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">
+              reussirchasne2026@gmail.com
+            </a>
+          </p>
+          <p class="small" style="margin:10px 0 0;color:var(--muted)">
+            Astuce : une fois l’ID du calendrier renseigné, le site se met à jour sans intervention.
           </p>
         </aside>
       </div>
     </section>
 
+    <!-- GOOGLE CALENDAR -->
+    <section class="section" aria-labelledby="cal">
+      <h2 class="section__title" id="cal">Calendrier</h2>
+
+      <div class="card">
+        <iframe
+          title="Calendrier des événements Réussir Chasné 2026"
+          src="https://calendar.google.com/calendar/embed?ctz=Europe%2FParis&mode=AGENDA&showTitle=0&showTabs=0&showPrint=0&showCalendars=0&showTz=0&src=TON_CALENDAR_ID"
+          height="650"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy"></iframe>
+
+        <p class="small" style="margin:10px 0 0;color:var(--muted)">
+          Pour activer l’affichage : rendre le calendrier public et remplacer <code>TON_CALENDAR_ID</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- LISTE (fallback / exemple) -->
     <section class="section" aria-labelledby="liste">
-      <h2 class="section__title" id="liste">Événements à venir</h2>
+      <h2 class="section__title" id="liste">Prochains rendez-vous (exemples)</h2>
 
       <div class="list" role="list">
-        <article class="item" role="listitem" aria-label="Événement 1">
+        <article class="item" role="listitem">
           <div>
             <strong>Réunion publique — Salle des fêtes</strong>
             <span>Chasné-sur-Illet • Présentation & questions/réponses</span>
@@ -86,7 +117,7 @@
           </div>
         </article>
 
-        <article class="item" role="listitem" aria-label="Événement 2">
+        <article class="item" role="listitem">
           <div>
             <strong>Rencontre citoyenne — Marché</strong>
             <span>Centre-ville • Échange libre</span>
@@ -97,7 +128,7 @@
           </div>
         </article>
 
-        <article class="item" role="listitem" aria-label="Événement 3">
+        <article class="item" role="listitem">
           <div>
             <strong>Porte-à-porte — Quartier Nord</strong>
             <span>Point de départ : Mairie • Écoute des habitants</span>
@@ -108,13 +139,18 @@
           </div>
         </article>
       </div>
+
+      <p class="small" style="margin:10px 0 0;color:var(--muted)">
+        Conseil : quand Google Agenda est en place, tu peux garder cette liste comme “mise en avant”
+        (ex : 3 prochains événements) et laisser l’iframe pour le détail complet.
+      </p>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="year"></span> — Propagande d’équipe</p>
-      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+      <p>© <span id="year"></span> — Réussir Chasné 2026</p>
+      <p class="small">Contact : <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a></p>
     </div>
   </footer>
 

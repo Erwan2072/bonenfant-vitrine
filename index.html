@@ -4,35 +4,53 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Propagande d’équipe — Accueil</title>
-  <meta name="description" content="Site vitrine : programme, agenda, actualités et contact. Accessible, moderne et rapide." />
+  <title>Réussir Chasné 2026 — Accueil</title>
+  <meta name="description" content="Réussir Chasné 2026 : une liste sans étiquette menée par Bertrand Bonenfant. Programme, agenda, priorités et contact." />
 
+  <!-- Canonical : à remplacer par ton URL finale (GitHub Pages / domaine) -->
   <link rel="canonical" href="https://ton-domaine.fr/" />
-  <meta property="og:title" content="Propagande d’équipe" />
-  <meta property="og:description" content="Programme, agenda, et informations utiles." />
+
+  <!-- Open Graph (partage réseaux) -->
+  <meta property="og:title" content="Réussir Chasné 2026" />
+  <meta property="og:description" content="Programme, agenda, priorités et contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
 
+  <!-- Twitter (optionnel mais utile) -->
+  <meta name="twitter:card" content="summary_large_image" />
+
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Données structurées (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Réussir Chasné 2026",
+    "url":"https://ton-domaine.fr",
+    "email":"reussirchasne2026@gmail.com"
+  }
+  </script>
 </head>
 
-<body>
+<body class="p-home">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" aria-label="Réussir Chasné 2026, retour à l’accueil">
         <span class="brand__logo" aria-hidden="true"></span>
         <span class="brand__text">
-          <strong>Propagande d’équipe</strong>
-          <span>Une commune qui avance, ensemble</span>
+          <strong>Réussir Chasné 2026</strong>
+          <span>Liste sans étiquette • Municipales 2026</span>
         </span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
         Ouvrir le menu
       </button>
+
 
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <a href="index.html" aria-current="page">Accueil</a>
@@ -45,50 +63,156 @@
   </header>
 
   <main id="contenu" class="container">
+    <!-- HERO -->
     <section class="hero" aria-labelledby="titre">
       <div class="hero__grid">
         <div>
-          <p class="kicker">Municipales 2026 • Site vitrine</p>
-          <h1 id="titre">Une équipe, une vision, des actions concrètes.</h1>
+          <p class="kicker">Municipales 2026 • Chasné-sur-Illet</p>
+          <h1 id="titre">Redonner l’envie d’agir, au plus près du local.</h1>
           <p class="lead">
-            Texte provisoire. L’idée : un message clair, lisible, et accessible à tous.
+            Une démarche de terrain, transparente et ouverte, pour remettre les Chasnéens et les Chasnéennes
+            au cœur du projet — de la naissance au grand âge.
           </p>
 
-          <div class="actions">
-            <a class="btn btn--primary" href="programme.html">Découvrir le programme</a>
-            <a class="btn" href="agenda.html">Voir l’agenda</a>
-            <a class="btn" href="contact.html">Nous écrire</a>
+          <div class="actions" aria-label="Actions principales">
+            <a class="btn btn--primary" href="programme.html">Découvrir le projet</a>
+            <a class="btn" href="agenda.html">Consulter l’agenda</a>
+            <a class="btn" href="mailto:reussirchasne2026@gmail.com">Écrire à l’équipe</a>
           </div>
 
-          <div class="grid-3" role="list">
-            <article class="card" role="listitem">
-              <h2>Proximité</h2>
-              <p>Rencontres régulières et décisions expliquées simplement.</p>
-            </article>
+          <div class="grid-3" role="list" aria-label="Principes">
             <article class="card" role="listitem">
               <h2>Transparence</h2>
-              <p>Engagements suivis, informations accessibles, démarche claire.</p>
+              <p>Des projets financés, maîtrisés et expliqués simplement.</p>
             </article>
             <article class="card" role="listitem">
-              <h2>Action</h2>
-              <p>Mesures réalistes, planifiées, évaluables.</p>
+              <h2>Proximité</h2>
+              <p>Écoute des habitants et décisions compréhensibles par tous.</p>
+            </article>
+            <article class="card" role="listitem">
+              <h2>Maîtrise</h2>
+              <p>Fiscalité suivie, priorités claires, communication régulière.</p>
             </article>
           </div>
+
+          <!-- PHOTO CANDIDAT (à ajouter) -->
+          <!-- Remplace le src par le bon fichier : assets/img/bertrand-bonenfant.jpg -->
+          <img
+            class="hero-img"
+            src="assets/img/bertrand-bonenfant.jpg"
+            alt="Portrait de Bertrand Bonenfant"
+            loading="lazy"
+            width="1200"
+            height="700"
+          />
+          <p class="small" style="margin:10px 0 0;color:var(--muted)">
+            Photo : à remplacer par ton fichier réel (tu peux ajuster le cadrage ensuite).
+          </p>
         </div>
 
-        <aside class="card" aria-label="Encadré d’information">
-          <h2>Infos rapides</h2>
-          <p class="small">Ajoute ici : une citation, un chiffre, ou le prochain rendez-vous.</p>
+        <aside class="card" aria-label="Contact rapide">
+          <h2>Contact</h2>
+          <p class="small" style="margin:0 0 10px;color:var(--muted)">
+            Une question, une idée, un besoin ? Écrivez-nous.
+          </p>
+          <p style="margin:0">
+            <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">
+              reussirchasne2026@gmail.com
+            </a>
+          </p>
+
+          <div class="section">
+            <h3 style="margin:0 0 8px">Priorités</h3>
+            <p class="small" style="margin:0;color:var(--muted)">
+              Accès aux soins • Sécurité routière • Commerce & artisanat • Agriculture • Rénovation énergétique
+            </p>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="seo">
-      <h2 class="section__title" id="seo">Accessibilité & informations</h2>
+    <!-- QUI EST BERTRAND BONENFANT -->
+    <section class="section" aria-labelledby="bio">
+      <h2 class="section__title" id="bio">Qui est Bertrand Bonenfant ?</h2>
+
       <div class="card">
         <p>
-          Ce site est conçu pour être navigable au clavier, compatible lecteurs d’écran,
-          avec des contrastes forts et des contenus structurés.
+          Bertrand Bonenfant est journaliste et administrateur de mutuelle. Sa famille est enracinée
+          à Chasné-sur-Illet depuis des générations. Âgé de 63 ans, il habite la commune dans la maison
+          de ses grands-parents, rachetée il y a 32 ans.
+        </p>
+
+        <p>
+          Père de quatre enfants, il a été membre de l’association des parents d’élèves (1993–2007),
+          représentant des parents au conseil d’école pendant 8 ans, puis conseiller municipal délégué
+          au budget et aux affaires scolaires (2001–2007).
+        </p>
+
+        <p style="margin-bottom:0">
+          Il conduit une liste quasi complète (19 titulaires et 2 suppléants), respectant la parité,
+          la diversité des parcours et l’équilibre des quartiers, avec des habitants nouveaux et anciens,
+          des jeunes et des aînés.
+        </p>
+      </div>
+    </section>
+
+    <!-- POURQUOI CETTE LISTE -->
+    <section class="section" aria-labelledby="liste-sans-etiquette">
+      <h2 class="section__title" id="liste-sans-etiquette">Pourquoi une liste sans étiquette ?</h2>
+
+      <div class="card">
+        <blockquote style="margin:0; padding-left:14px; border-left:4px solid var(--line); color:var(--muted)">
+          « La baisse de la participation aux élections municipales, les démissions en cascade et le revote
+          en 2025 incitent à présenter une liste sans étiquette en 2026. C’est maintenant ou jamais. »
+        </blockquote>
+
+        <p style="margin:12px 0 0;color:var(--muted)">
+          Objectif : faire entendre la voix de Chasné au sein des instances, et remettre la commune
+          en mouvement avec des projets clairs, expliqués et suivis.
+        </p>
+      </div>
+    </section>
+
+    <!-- AXES DU PROJET -->
+    <section class="section" aria-labelledby="axes">
+      <h2 class="section__title" id="axes">Les axes du projet</h2>
+
+      <div class="grid-3" role="list" aria-label="Axes du projet">
+        <article class="card" role="listitem">
+          <h3>Accès aux soins</h3>
+          <p>Faciliter l’accès et soutenir les initiatives locales.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Sécurité routière</h3>
+          <p>Améliorer la sécurité au quotidien, notamment aux points sensibles.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3>Commerce & activités</h3>
+          <p>Dynamiser commerces, artisanat et agriculture, avec des actions concrètes.</p>
+        </article>
+      </div>
+
+      <div class="section">
+        <div class="card">
+          <h3 style="margin-top:0">Rénovation énergétique & gestion</h3>
+          <p style="color:var(--muted)">
+            Accélérer la rénovation énergétique des bâtiments communaux, tout en maîtrisant la fiscalité,
+            en communiquant davantage avec les habitants et en garantissant une gestion transparente des projets.
+          </p>
+          <p class="small" style="margin:0;color:var(--muted)">
+            Retrouvez le détail dans la page <a href="programme.html">Programme</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBILITÉ -->
+    <section class="section" aria-labelledby="access">
+      <h2 class="section__title" id="access">Accessibilité</h2>
+      <div class="card">
+        <p style="margin:0;color:var(--muted)">
+          Ce site est conçu pour être navigable au clavier, compatible lecteurs d’écran, avec des contenus structurés,
+          et une attention portée aux contrastes et à la lisibilité.
         </p>
       </div>
     </section>
@@ -96,8 +220,8 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <p>© <span id="year"></span> — Propagande d’équipe</p>
-      <p class="small">Site vitrine sans backend • Mentions légales à compléter</p>
+      <p>© <span id="year"></span> — Réussir Chasné 2026</p>
+      <p class="small">Contact : <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a></p>
     </div>
   </footer>
 
