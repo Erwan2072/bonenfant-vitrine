@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Réussir Chasné 2026 — Chasné-sur-Illet</title>
-  <meta name="description" content="Réussir Chasné 2026 : liste sans étiquette menée par Bertrand Bonenfant. Programme, agenda, équipe et contact." />
+  <meta name="description" content="Réussir Chasné 2026 : liste sans étiquette menée par Bertrand Bonenfant. Des projets maîtrisés, transparents et utiles au quotidien. Programme, agenda, équipe et contact." />
 
   <link rel="canonical" href="https://ton-domaine.fr/" />
+
   <meta property="og:title" content="Réussir Chasné 2026" />
-  <meta property="og:description" content="Programme, agenda, équipe et contact." />
+  <meta property="og:description" content="Liste sans étiquette menée par Bertrand Bonenfant. Programme, agenda, équipe et contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
+  <meta property="og:locale" content="fr_FR" />
+
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
@@ -28,16 +31,36 @@
   </script>
 </head>
 
-<body>
+<body class="p-home">
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="index.html" aria-label="Réussir Chasné 2026, retour à l’accueil">
-        <img class="brand__img" src="assets/img/logo-reussir-chasne.jpg" alt="Logo Réussir Chasné" width="180" height="54" loading="eager">
+        <img
+          class="brand__img"
+          src="assets/img/logo-reussir-chasne.jpg"
+          alt="Logo Réussir Chasné — Construisons ensemble Chasné-sur-Illet"
+          width="420"
+          height="140"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand__text">
+          <strong>Réussir Chasné 2026</strong>
+          <span>Construisons ensemble Chasné-sur-Illet</span>
+        </span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">
+      <div class="header__social" aria-label="Réseaux sociaux">
+        <!-- Remplace le lien par ton vrai Facebook -->
+        <a class="social" href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Réussir Chasné 2026 (ouvre un nouvel onglet)">
+          <span aria-hidden="true">f</span>
+          <span class="social__label">Facebook</span>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
         Menu
       </button>
 
@@ -51,133 +74,195 @@
     </div>
   </header>
 
-  <main id="contenu" class="container">
-    <section class="hero" aria-labelledby="titre">
-      <div class="hero__inner">
-        <div>
+  <main id="contenu">
+    <!-- HERO -->
+    <section class="hero hero--home" aria-labelledby="titre">
+      <div class="container hero__inner">
+        <div class="hero__content">
           <p class="badge">Municipales 2026 • Chasné-sur-Illet</p>
+
           <h1 id="titre">Réussir Chasné, ensemble.</h1>
+
           <p class="lead">
-            Une liste sans étiquette, ancrée localement, pour des projets maîtrisés, transparents et utiles au quotidien.
+            Une liste sans étiquette, ancrée localement, pour des projets <strong>maîtrisés</strong>,
+            <strong>transparents</strong> et <strong>utiles au quotidien</strong>.
           </p>
 
           <div class="cta" aria-label="Actions principales">
             <a class="btn btn--primary" href="programme.html">Découvrir le programme</a>
-            <a class="btn" href="agenda.html">Voir l’agenda</a>
-            <a class="btn" href="contact.html">Nous écrire</a>
+            <a class="btn btn--ghost" href="agenda.html">Voir l’agenda</a>
+            <a class="btn btn--outline" href="mailto:reussirchasne2026@gmail.com">Nous écrire</a>
+          </div>
+
+          <div class="priorities" aria-label="Priorités">
+            <article class="pillcard">
+              <h2>Accès aux soins</h2>
+              <p>Faciliter l’accès et soutenir les initiatives locales.</p>
+            </article>
+            <article class="pillcard">
+              <h2>Sécurité routière</h2>
+              <p>Actions ciblées aux points sensibles et aux heures clés.</p>
+            </article>
+            <article class="pillcard">
+              <h2>Économie locale</h2>
+              <p>Dynamiser commerces, artisanat et agriculture.</p>
+            </article>
           </div>
         </div>
 
-        <div class="hero__media" aria-label="Portrait">
-          <img class="portrait" src="assets/img/bertrand-bonenfant.jpg" alt="Portrait de Bertrand Bonenfant" width="900" height="1200" loading="lazy">
-        </div>
+        <!-- Carte candidat (BIO + GRANDE + PLUS COMPLETE) -->
+        <aside class="hero__side" aria-label="Présentation de Bertrand Bonenfant">
+          <div class="profile">
+            <div class="profile__media">
+              <img
+                src="assets/img/bertrand-bonenfant.jpg"
+                alt="Portrait de Bertrand Bonenfant"
+                width="900"
+                height="1100"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="profile__body">
+              <p class="profile__kicker">Tête de liste • Municipales 2026</p>
+              <h2 class="profile__name">Bertrand Bonenfant</h2>
+              <p class="profile__meta">Journaliste • Administrateur de mutuelle • 63 ans</p>
+
+              <p class="profile__text">
+                Sa famille est enracinée à Chasné-sur-Illet depuis des générations.
+                Il vit dans la maison de ses grands-parents, rachetée il y a 32 ans.
+              </p>
+
+              <p class="profile__text">
+                Père de quatre enfants, il a été membre de l’association des parents d’élèves (1993–2007),
+                représentant des parents au conseil d’école pendant 8 ans, puis conseiller municipal délégué
+                au budget et aux affaires scolaires (2001–2007).
+              </p>
+
+              <div class="profile__cta" aria-label="Actions liées à Bertrand Bonenfant">
+                <a class="btn btn--primary" href="equipe.html">Découvrir l’équipe</a>
+                <a class="btn btn--outline" href="programme.html">Lire le projet</a>
+              </div>
+
+              <div class="profile__note" aria-label="Informations complémentaires">
+                <p class="muted" style="margin:12px 0 0; font-size:14px;">
+                  Liste quasi complète : <strong>19 titulaires</strong> et <strong>2 suppléants</strong>,
+                  parité respectée et diversité des parcours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="priorites">
-      <div class="section__head">
-        <h2 id="priorites">Priorités</h2>
-        <p class="muted">Clair, concret, lisible.</p>
-      </div>
-
-      <div class="grid" role="list" aria-label="Priorités">
-        <article class="card" role="listitem">
-          <h3>Accès aux soins</h3>
-          <p>Faciliter l’accès et soutenir les initiatives locales.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Sécurité routière</h3>
-          <p>Améliorer la sécurité au quotidien, notamment aux points sensibles.</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Économie locale</h3>
-          <p>Dynamiser commerces, artisanat et agriculture.</p>
-        </article>
-      </div>
-
-      <div class="band" role="region" aria-label="Raccourcis">
-        <div>
-          <strong>Envie de participer ?</strong>
-          <div class="muted">Consulte l’agenda ou envoie une idée.</div>
-        </div>
-        <div class="cta">
-          <a class="btn" href="agenda.html">Agenda</a>
-          <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">Email</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="texte-complet">
-      <div class="section__head">
-        <h2 id="texte-complet">Présentation</h2>
-        <p class="muted">Résumé + texte complet bien rangé.</p>
-      </div>
-
-      <div class="card">
-        <p style="margin:0">
-          Bertrand Bonenfant est journaliste et administrateur de mutuelle, enraciné à Chasné-sur-Illet depuis des générations.
-          Il habite la commune depuis 32 ans dans la maison de ses grands-parents.
+    <!-- PARCOURS & DEMARCHE (reprend ton texte, sans faire un pavé) -->
+    <section class="section" aria-labelledby="parcours">
+      <div class="container section__head">
+        <h2 id="parcours">Une démarche sans étiquette</h2>
+        <p class="muted">
+          Une équipe pluraliste, de nouveaux habitants comme des anciens, des jeunes et des aînés,
+          mobilisés depuis septembre en ateliers.
         </p>
       </div>
 
-      <details class="section" aria-label="Lire la présentation complète">
-        <summary>Lire la présentation complète</summary>
-        <div class="details__content">
-          <p>
-            Bertrand Bonenfant est journaliste et administrateur de mutuelle. Sa famille est enracinée à Chasné-sur-Illet (Ille-et-Vilaine)
-            depuis des générations où son grand-père était commerçant. Âgé de 63 ans, il a racheté la maison de ses grands-parents il y a 32 ans
-            et il y habite.
+      <div class="container grid" style="grid-template-columns: 1.2fr .8fr; align-items:stretch;">
+        <article class="photo-card" style="padding:18px;">
+          <h3 style="margin:0 0 10px;">Pourquoi se présenter ?</h3>
+          <p class="muted" style="margin:0;">
+            « La baisse de la participation, les démissions en cascade et le revote en 2025 incitent à présenter
+            une liste sans étiquette en 2026. C’est maintenant ou jamais. »
           </p>
-
-          <p><strong>Une liste sans étiquette</strong></p>
-
-          <p>
-            Père de quatre enfants aujourd’hui adultes, il a été membre de l’association des parents d’élèves de 1993 à 2007 et représentant
-            des parents au conseil d’école pendant 8 ans. Il a été conseiller municipal délégué au budget et aux affaires scolaires de 2001 à 2007
-            en même temps que représentant du conseil municipal au conseil d’école.
+          <p class="muted" style="margin:12px 0 0;">
+            Objectif : remettre les Chasnéens et les Chasnéennes au cœur du projet, de la naissance au grand âge,
+            en encourageant le tissage de nouvelles solidarités.
           </p>
+        </article>
 
-          <p>
-            « J’aime cette commune ! La baisse de la participation aux élections municipales de 2020 et 2025, les démissions en cascade qui ont conduit
-            la commune à revoter en 2025 m’incitent à présenter une liste sans étiquette en 2026. C’est maintenant ou jamais. L’équipe sortante a fait ce
-            qu’elle a pu, avec les moyens et les engagements dont elle disposait. La communauté de communes ne semble pas avoir apporté de satisfaction aux
-            Chasnéens. La prochaine équipe devra y faire entendre sa voix. »
+        <aside class="photo-card" style="padding:18px;">
+          <h3 style="margin:0 0 10px;">Contact direct</h3>
+          <p class="muted" style="margin:0 0 12px;">
+            Une question, une idée, un besoin : écrivez-nous.
           </p>
+          <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a>
 
-          <p>
-            Bertrand Bonenfant se présente à la tête d’une liste quasi complète : 19 titulaires et 2 suppléants. Elle respecte non seulement la parité
-            mais aussi la géographie du territoire et les équilibres sociaux professionnels.
-          </p>
-
-          <p>
-            Elle intègre des nouveaux habitants et des anciens, des jeunes et des aînés, quelques anciens élus et des gens neufs. Tous ont une grosse motivation
-            et travaillent en ateliers depuis septembre.
-          </p>
-
-          <p><strong>Le projet</strong></p>
-
-          <p>
-            Il faut maîtriser la fiscalité et communiquer avec les habitants, mettre en place des projets maîtrisés, financés et transparents.
-            Les principaux axes de travail sont l’accès aux soins, l’amélioration de la sécurité routière, la dynamisation des commerces, de l’artisanat
-            et de l’agriculture, l’accélération de la rénovation énergétique des bâtiments communaux. Il faudra aussi renforcer les liens avec l’école et le
-            personnel communal, encourager les animations dans la commune : ranimer la flamme.
-          </p>
-
-          <p>
-            « Et si, ensemble, on redonnait un peu d’enchantement en partant du local. Nous mettrons les Chasnéens et les Chasnéennes au cœur du projet,
-            de la naissance au grand âge en encourageant le tissage de nouvelles solidarités. »
-          </p>
-
-          <p><strong>Contact :</strong> <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a></p>
-        </div>
-      </details>
+          <div style="margin-top:14px;">
+            <h4 style="margin:0 0 8px;">Priorités</h4>
+            <p class="muted" style="margin:0;">
+              Soins • Sécurité routière • Commerce & artisanat • Agriculture • Rénovation énergétique
+            </p>
+          </div>
+        </aside>
+      </div>
     </section>
+
+    <!-- SECTION PHOTOS COMMUNE -->
+    <section class="section" aria-labelledby="photos">
+      <div class="container section__head">
+        <h2 id="photos">Chasné-sur-Illet</h2>
+        <p class="muted">Quelques images de la commune (temporaires, tu remplaceras par les vraies).</p>
+      </div>
+
+      <div class="container grid gallery" role="list" aria-label="Photos de la commune">
+        <article class="photo-card" role="listitem">
+          <div class="photo-card__media">
+            <img src="assets/img/chasne-eglise.jpg" alt="L’église de Chasné-sur-Illet (photo temporaire)" loading="lazy" width="1400" height="900">
+          </div>
+          <div class="photo-card__body">
+            <h3>L’église</h3>
+            <p>Un repère emblématique du centre-bourg.</p>
+          </div>
+        </article>
+
+        <article class="photo-card" role="listitem">
+          <div class="photo-card__media">
+            <img src="assets/img/mairie.jpg" alt="La mairie de Chasné-sur-Illet (photo temporaire)" loading="lazy" width="1400" height="900">
+          </div>
+          <div class="photo-card__body">
+            <h3>La mairie</h3>
+            <p>Le cœur administratif de la commune.</p>
+          </div>
+        </article>
+
+        <article class="photo-card" role="listitem">
+          <div class="photo-card__media">
+            <img src="assets/img/vers-etang.jpg" alt="Parc et étang à Chasné-sur-Illet (photo temporaire)" loading="lazy" width="2000" height="700">
+          </div>
+          <div class="photo-card__body">
+            <h3>Parc & étang</h3>
+            <p>Un espace de respiration et de promenade.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INFO RAPIDE -->
+    <section class="section section--soft" aria-label="Informations rapides">
+      <div class="container info">
+        <div class="info__text">
+          <h2>Rencontrons-nous</h2>
+          <p class="muted">
+            Consulte les dates de réunion et les temps d’échange. Tu peux aussi nous écrire en 30 secondes.
+          </p>
+        </div>
+        <div class="info__cta">
+          <a class="btn btn--primary" href="agenda.html">Voir l’agenda</a>
+          <a class="btn btn--outline" href="mailto:reussirchasne2026@gmail.com">Nous écrire</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
     <div class="container footer__inner">
       <p>© <span id="year"></span> — Réussir Chasné 2026</p>
-      <p class="small">Contact : <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a></p>
+      <p class="small">
+        Contact : <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a>
+        <span aria-hidden="true"> • </span>
+        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </p>
     </div>
   </footer>
 
