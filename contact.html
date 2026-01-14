@@ -3,45 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Réussir Chasné 2026 — Contact</title>
-  <meta name="description" content="Contact Réussir Chasné 2026 : écrire à l’équipe, proposer une idée ou signaler un besoin. Page accessible, sans backend." />
-
-  <!-- Canonical : à remplacer par ton URL finale -->
+  <meta name="description" content="Contact Réussir Chasné 2026 : écrivez à l’équipe." />
   <link rel="canonical" href="https://ton-domaine.fr/contact.html" />
-
-  <meta property="og:title" content="Réussir Chasné 2026 — Contact" />
-  <meta property="og:description" content="Écrire à l’équipe, proposer une idée, signaler un besoin." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://ton-domaine.fr/assets/img/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-
-<body class="p-contact">
+<body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Réussir Chasné 2026, retour à l’accueil">
-        <span class="brand__logo" aria-hidden="true"></span>
-        <span class="brand__text">
-          <strong>Réussir Chasné 2026</strong>
-          <span>Liste sans étiquette • Municipales 2026</span>
-        </span>
+      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
+        <img class="brand__img" src="assets/img/logo-reussir-chasne.jpg" alt="Logo Réussir Chasné" width="180" height="54">
       </a>
-
-      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
-        Ouvrir le menu
-      </button>
-
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="programme.html">Programme</a>
         <a href="agenda.html">Agenda</a>
-        <a href="chasneens.html">Les Chasnéen·ne·s</a>
+        <a href="equipe.html">Équipe</a>
         <a href="contact.html" aria-current="page">Contact</a>
       </nav>
     </div>
@@ -49,92 +30,45 @@
 
   <main id="contenu" class="container">
     <section class="hero" aria-labelledby="titre">
-      <div class="hero__grid">
+      <div class="hero__inner">
         <div>
-          <p class="kicker">Contact</p>
-          <h1 id="titre">Nous écrire</h1>
-          <p class="lead">
-            Une question, une idée, un besoin ? Écrivez-nous : chaque message compte.
-            La page est conçue pour être utilisable au clavier, avec lecteurs d’écran et contrôle vocal.
-          </p>
+          <p class="badge">Contact</p>
+          <h1 id="titre">Écrivez-nous</h1>
+          <p class="lead">Sans backend : le formulaire ouvre votre application mail.</p>
+        </div>
+        <div class="hero__media" aria-hidden="true"></div>
+      </div>
+    </section>
 
-          <div class="actions" aria-label="Contact direct">
-            <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">Écrire par email</a>
-            <a class="btn" href="agenda.html">Voir l’agenda</a>
-          </div>
+    <section class="section">
+      <div class="grid" style="grid-template-columns: 1.2fr .8fr;">
+        <div class="card">
+          <h2 style="margin:0 0 10px">Message</h2>
+          <form id="contactForm">
+            <div>
+              <label for="name"><strong>Nom</strong></label><br>
+              <input id="name" name="name" autocomplete="name" required>
+            </div>
+
+            <div>
+              <label for="email"><strong>Email</strong></label><br>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+
+            <div>
+              <label for="message"><strong>Message</strong></label><br>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Envoyer</button>
+          </form>
         </div>
 
-        <aside class="card" aria-label="Adresse email">
-          <h2>Email</h2>
-          <p class="small" style="margin:0 0 10px;color:var(--muted)">
-            Vous pouvez nous contacter directement à l’adresse :
-          </p>
-          <p style="margin:0">
-            <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">
-              reussirchasne2026@gmail.com
-            </a>
-          </p>
-          <p class="small" style="margin:10px 0 0;color:var(--muted)">
-            (L’envoi passe par votre application mail, car le site est volontairement sans backend.)
-          </p>
+        <aside class="card" aria-label="Contact direct">
+          <h2 style="margin:0 0 10px">Email</h2>
+          <p style="margin:0 0 10px" class="muted">reussirchasne2026@gmail.com</p>
+          <a class="btn" href="mailto:reussirchasne2026@gmail.com">Ouvrir l’email</a>
         </aside>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="form">
-      <h2 class="section__title" id="form">Formulaire</h2>
-
-      <div class="card">
-        <form id="contactForm" aria-describedby="aide">
-          <p id="aide" class="small" style="margin-top:0;color:var(--muted);">
-            Les champs marqués * sont obligatoires.
-          </p>
-
-          <div class="field">
-            <label for="name">Nom *</label>
-            <input id="name" name="name" autocomplete="name" required />
-          </div>
-
-          <div class="field">
-            <label for="email">Email *</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-
-          <div class="field">
-            <label for="subject">Sujet</label>
-            <input id="subject" name="subject" autocomplete="off" />
-          </div>
-
-          <div class="field">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <button class="btn btn--primary" type="submit">Envoyer</button>
-        </form>
-      </div>
-
-      <p class="small" style="margin:10px 0 0;color:var(--muted)">
-        Astuce : si vous préférez, vous pouvez aussi écrire directement à
-        <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a>.
-      </p>
-    </section>
-
-    <section class="section" aria-labelledby="alternatives">
-      <h2 class="section__title" id="alternatives">Autres moyens</h2>
-      <div class="grid-3" role="list" aria-label="Autres moyens de contact">
-        <article class="card" role="listitem">
-          <h3>Accessibilité</h3>
-          <p>Vous pouvez indiquer ici un numéro dédié ou un canal adapté (si souhaité).</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Permanences</h3>
-          <p>Ajoutez ici les horaires d’écoute ou de permanence (si prévu).</p>
-        </article>
-        <article class="card" role="listitem">
-          <h3>Réseaux</h3>
-          <p>Ajoutez vos liens (avec libellés explicites, sans icônes seules).</p>
-        </article>
       </div>
     </section>
   </main>
