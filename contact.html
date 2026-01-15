@@ -9,15 +9,49 @@
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#contenu">Aller au contenu principal</a>
 
   <header class="header">
     <div class="container header__inner">
-      <a class="brand" href="index.html" aria-label="Retour à l’accueil">
-        <img class="brand__img" src="assets/img/logo-reussir-chasne.jpg" alt="Logo Réussir Chasné" width="180" height="54">
+      <a class="brand" href="index.html" aria-label="Réussir Chasné 2026, retour à l’accueil">
+        <img
+          class="brand__img"
+          src="assets/img/logo-reussir-chasne.jpg"
+          alt="Logo Réussir Chasné — Construisons ensemble Chasné-sur-Illet"
+          width="420"
+          height="140"
+          loading="eager"
+          decoding="async"
+        />
+        <span class="brand__text">
+          <strong>Réussir Chasné 2026</strong>
+          <span>Construisons ensemble Chasné-sur-Illet</span>
+        </span>
       </a>
-      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+
+      <div class="header__social" aria-label="Réseaux sociaux">
+        <a
+          class="social"
+          href="https://www.facebook.com/profile.php?id=61586626919755"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook Réussir Chasné 2026 (ouvre un nouvel onglet)"
+        >
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9
+              1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10
+              10 0 0 0 22 12Z"/>
+          </svg>
+          <span class="social__label">Facebook</span>
+        </a>
+      </div>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+        Menu
+      </button>
+
       <nav class="nav" id="nav" aria-label="Navigation principale">
         <a href="index.html">Accueil</a>
         <a href="programme.html">Programme</a>
@@ -28,57 +62,166 @@
     </div>
   </header>
 
-  <main id="contenu" class="container">
+  <main id="contenu">
+    <!-- HERO -->
     <section class="hero" aria-labelledby="titre">
-      <div class="hero__inner">
-        <div>
+      <div class="container">
+        <div class="hero__content">
           <p class="badge">Contact</p>
           <h1 id="titre">Écrivez-nous</h1>
-          <p class="lead">Sans backend : le formulaire ouvre votre application mail.</p>
+          <p class="lead">
+            Une question, une idée, une envie de s’engager ?
+            Ce formulaire ouvre directement votre application mail.
+          </p>
         </div>
-        <div class="hero__media" aria-hidden="true"></div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="grid" style="grid-template-columns: 1.2fr .8fr;">
-        <div class="card">
-          <h2 style="margin:0 0 10px">Message</h2>
-          <form id="contactForm">
-            <div>
-              <label for="name"><strong>Nom</strong></label><br>
-              <input id="name" name="name" autocomplete="name" required>
-            </div>
-
-            <div>
-              <label for="email"><strong>Email</strong></label><br>
-              <input id="email" name="email" type="email" autocomplete="email" required>
-            </div>
-
-            <div>
-              <label for="message"><strong>Message</strong></label><br>
-              <textarea id="message" name="message" required></textarea>
-            </div>
-
-            <button class="btn btn--primary" type="submit">Envoyer</button>
-          </form>
+    <!-- FORMULAIRE + CONTACT DIRECT -->
+    <section class="section section--soft" id="formulaire" aria-labelledby="contact-form">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="contact-form">Nous contacter</h2>
+          <p class="muted">Réponse rapide par email.</p>
         </div>
 
-        <aside class="card" aria-label="Contact direct">
-          <h2 style="margin:0 0 10px">Email</h2>
-          <p style="margin:0 0 10px" class="muted">reussirchasne2026@gmail.com</p>
-          <a class="btn" href="mailto:reussirchasne2026@gmail.com">Ouvrir l’email</a>
-        </aside>
+        <div class="grid" style="grid-template-columns: 1.2fr .8fr; gap:18px;">
+          <!-- FORMULAIRE -->
+          <div class="photo-card">
+            <div class="photo-card__body">
+              <h3>Votre message</h3>
+
+              <form id="contactForm">
+                <div style="margin-bottom:12px;">
+                  <label for="name"><strong>Nom</strong></label><br>
+                  <input
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                    style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(11,27,22,.15);"
+                  >
+                </div>
+
+                <div style="margin-bottom:12px;">
+                  <label for="email"><strong>Email</strong></label><br>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(11,27,22,.15);"
+                  >
+                </div>
+
+                <div style="margin-bottom:14px;">
+                  <label for="message"><strong>Message</strong></label><br>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    required
+                    style="width:100%; padding:10px; border-radius:12px; border:1px solid rgba(11,27,22,.15);"
+                  ></textarea>
+                </div>
+
+                <div class="cta">
+                  <button class="btn btn--primary" type="submit">Envoyer</button>
+                  <a class="btn btn--ghost" href="mailto:reussirchasne2026@gmail.com">Passer par mon email</a>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- CONTACT DIRECT -->
+          <aside class="photo-card" aria-label="Contact direct">
+            <div class="photo-card__body">
+              <h3>Contact direct</h3>
+              <p class="muted">Vous pouvez aussi nous écrire directement :</p>
+
+              <p style="font-weight:700; margin:10px 0;">
+                reussirchasne2026@gmail.com
+              </p>
+
+              <div class="cta">
+                <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">
+                  Ouvrir l’email
+                </a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANDE CONTACT (cohérence globale) -->
+    <section class="section" aria-label="Contact rapide">
+      <div class="container">
+        <div class="info">
+          <div class="info__text">
+            <h2>Restons en contact</h2>
+            <p class="muted">Chaque message compte pour construire le projet.</p>
+          </div>
+
+          <div class="info__cta">
+            <a class="btn btn--primary" href="mailto:reussirchasne2026@gmail.com">Écrire</a>
+            <a class="btn btn--outline" href="agenda.html">Nous rencontrer</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> — Réussir Chasné 2026</p>
-      <p class="small">Contact : <a href="mailto:reussirchasne2026@gmail.com">reussirchasne2026@gmail.com</a></p>
-    </div>
-  </footer>
+  <div class="container footer__inner">
+    <p>© <span id="year"></span> — Réussir Chasné 2026</p>
+
+    <p class="small" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+      <!-- Contact mail -->
+      <a href="mailto:reussirchasne2026@gmail.com" aria-label="Écrire à Réussir Chasné 2026">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16
+            c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+        </svg>
+      </a>
+
+      <!-- Logo R-One Vidéaste (lien externe) -->
+      <a
+        href="https://www.r-one-videaste.fr"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="R-One Vidéaste — Créateur vidéo et développeur web (nouvel onglet)"
+        style="display:inline-flex; align-items:center;"
+      >
+        <img
+          src="assets/img/rone-videaste.png"
+          alt="R-One Vidéaste — Créateur vidéo et développeur web"
+          width="26"
+          height="26"
+          loading="lazy"
+        >
+      </a>
+
+      <!-- Mentions légales -->
+      <a href="mentions-legales.html">Mentions légales</a>
+
+      <!-- Facebook -->
+      <a
+        href="https://www.facebook.com/profile.php?id=61586626919755"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook Réussir Chasné 2026 (nouvel onglet)"
+      >
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9
+            1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10
+            10 0 0 0 22 12Z"/>
+        </svg>
+      </a>
+    </p>
+  </div>
+</footer>
 
   <script src="js/main.js" defer></script>
 </body>
