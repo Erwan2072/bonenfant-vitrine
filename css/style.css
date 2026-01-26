@@ -407,39 +407,85 @@ h1{
 /* =========================================================
    6) CARDS (photo-card)
    ========================================================= */
-.photo-card{
-  border-radius: 20px;
-  border:1px solid color-mix(in srgb, var(--text) 10%, white);
-  background: var(--card-bg);
-  box-shadow: var(--shadow2);
-  overflow:hidden;
+.gallery {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* ✅ règle générale pour images “normales” de cards */
-.photo-card__media img{
-  width:100%;
-  height: 220px;
+@media (max-width: 900px) {
+  .gallery { grid-template-columns: 1fr; }
+}
+
+/* --- CARD --- */
+.photo-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--surface, #fff);
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+}
+
+.photo-card__media {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* Hauteur stable pour éviter CLS */
+.photo-card__media .carousel__track {
+  aspect-ratio: 16 / 10;
+}
+
+.carousel__slide {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  display:block;
-  background:#fff;
+  display: none;
 }
 
-.photo-card__body{ padding:14px; }
-
-.photo-card__body h3{
-  margin:0 0 6px;
-  font-style: italic;
-  font-weight: 800;
-  letter-spacing: -0.01em;
+.carousel__slide.is-active {
+  display: block;
 }
 
-.photo-card__body p{
-  margin:0;
-  color:var(--muted);
-  font-size:14px;
+.photo-card__body {
+  padding: 1rem 1.1rem;
 }
 
-.photo-card__body p + p{ margin-top: 8px; }
+/* --- CAROUSEL BUTTONS --- */
+.carousel__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.7);
+  background: rgba(0,0,0,.35);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .15s ease;
+}
+
+.carousel__btn.prev { left: 10px; }
+.carousel__btn.next { right: 10px; }
+
+.photo-card__media:hover .carousel__btn,
+.photo-card__media:focus-within .carousel__btn {
+  opacity: 1;
+}
+
+.carousel__btn:focus-visible {
+  outline: 3px solid rgba(255,255,255,.9);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__btn { transition: none; }
+}
+
 
 /* =========================================================
    7) INFO STRIP (Contact / sections CTA)
@@ -752,7 +798,7 @@ h1{
 }
 
 /* =========================================================
-   13) CAROUSEL (photos dans une seule card) — FIX “PHOTO ENTIÈRE”
+   13) CAROUSEL
    IMPORTANT : on OVERRIDE la règle globale :
    .photo-card__media img { height:220px; object-fit:cover; }
    ========================================================= */
@@ -776,8 +822,6 @@ h1{
   .carousel__viewport{ height: var(--carousel-h-mobile); }
 }
 
-/* ✅ image ENTIÈRE, jamais coupée, toutes pareilles
-   -> width/height 100% + contain = affiche tout dans le cadre */
 .photo-card__media.carousel img.carousel__img{
   position: absolute;
   inset: 0;

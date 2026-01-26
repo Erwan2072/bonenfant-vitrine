@@ -485,6 +485,55 @@
     dots.forEach((d) => d.addEventListener("click", gentleRestart));
   });
 
+  /* =========================================================
+     Carousel générique (data-carousel)
+     ========================================================= */
+  const carousels = document.querySelectorAll('[data-carousel]');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  carousels.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll('.carousel__slide'));
+    const prevBtn = carousel.querySelector('[data-prev]');
+    const nextBtn = carousel.querySelector('[data-next]');
+
+    if (slides.length <= 1) return;
+
+    let index = slides.findIndex(s => s.classList.contains('is-active'));
+    if (index < 0) index = 0;
+
+    const show = (i) => {
+      slides[index].classList.remove('is-active');
+      index = (i + slides.length) % slides.length;
+      slides[index].classList.add('is-active');
+    };
+
+    const next = () => show(index + 1);
+    const prev = () => show(index - 1);
+
+    prevBtn?.addEventListener('click', prev);
+    nextBtn?.addEventListener('click', next);
+
+    // Auto-rotate (safe for Lighthouse + accessible)
+    let timer = null;
+    const start = () => {
+      if (reduceMotion) return;
+      if (timer) return;
+      timer = window.setInterval(next, 4500);
+    };
+    const stop = () => {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    };
+
+    // Pause on interaction
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+
+    start();
+  });
 
 
 })();
