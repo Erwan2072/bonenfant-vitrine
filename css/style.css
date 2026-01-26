@@ -888,3 +888,99 @@ h1{
   background: var(--purple-600);
   border-color: color-mix(in srgb, var(--purple-600) 60%, white);
 }
+
+/* =========================================================
+   ÉQUIPE — Grille 3 colonnes + cartes A4 + clic zoom
+   ========================================================= */
+
+.gallery.team-grid{
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px; /* plus compact */
+}
+
+/* Tablette */
+@media (max-width: 1100px){
+  .gallery.team-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile */
+@media (max-width: 820px){
+  .gallery.team-grid{ grid-template-columns: 1fr; }
+}
+
+/* Carte image-only */
+.team-card{ padding: 0; }
+
+/* Bouton cliquable (reset propre) */
+.team-card__btn{
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* A4 strict (portrait) */
+.team-card__img{
+  width: 100%;
+  height: auto;
+  aspect-ratio: 210 / 297; /* A4 */
+  object-fit: cover;
+  display: block;
+}
+
+/* Petit effet hover (léger, perf-friendly) */
+.team-card__btn:hover .team-card__img{
+  filter: saturate(1.02) contrast(1.02);
+}
+
+/* Modal image */
+.team-modal__content{
+  display: grid;
+  place-items: center;
+}
+
+.team-modal__img{
+  width: min(820px, 92vw);
+  max-height: 82vh;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, white);
+  background: #fff;
+}
+
+/* =========================================================
+   ÉQUIPE — Modal : afficher le portrait en A4 (sans déformer)
+   ========================================================= */
+
+.team-modal .card-modal__panel{
+  /* le panel ne doit pas “forcer” un scroll qui coupe l’image */
+  overflow: hidden;       /* au lieu de auto */
+  max-height: 92vh;       /* on garde un confort */
+  padding: 18px;
+}
+
+.team-modal__content{
+  display: grid;
+  place-items: center;
+  height: calc(92vh - 70px); /* réserve de la place pour le bouton X */
+}
+
+/* A4 strict dans le modal */
+.team-modal__img{
+  aspect-ratio: 210 / 297; /* A4 */
+  height: 100%;            /* prend toute la hauteur dispo du contenu */
+  width: auto;             /* largeur auto => garde le ratio */
+  max-width: 92vw;         /* sécurité mobile */
+  object-fit: contain;     /* ne coupe pas */
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--text) 12%, white);
+  background: #fff;
+}
+
+/* Suppléants : même taille visuelle que les colistiers */
+.gallery--suppleants .team-card{
+  max-width: 360px;   /* ajuste si besoin */
+  margin-inline: auto;
+}

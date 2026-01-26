@@ -535,5 +535,60 @@
     start();
   });
 
+  (function initTeamModal() {
+  const modal = document.getElementById('teamModal');
+  if (!modal) return; // pas sur equipe.html
 
+  const closeBtn = document.getElementById('teamModalClose');
+  const modalImg = document.getElementById('teamModalImg');
+
+  let lastFocus = null;
+
+  function openModal(src, alt) {
+    lastFocus = document.activeElement;
+
+    modalImg.src = src;
+    modalImg.alt = alt || '';
+
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    modalImg.src = '';
+    modalImg.alt = '';
+    document.body.style.overflow = '';
+
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  // Ouvrir au clic sur une carte
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.team-card__btn');
+    if (!btn) return;
+
+    const src = btn.getAttribute('data-src');
+    const alt = btn.getAttribute('data-alt') || btn.querySelector('img')?.alt || '';
+    if (src) openModal(src, alt);
+  });
+
+  // Fermer (bouton)
+  closeBtn.addEventListener('click', closeModal);
+
+  // Fermer (clic backdrop)
+  modal.addEventListener('click', (e) => {
+    if (e.target && e.target.getAttribute('data-close') === 'true') {
+      closeModal();
+    }
+  });
+
+  // Fermer (ESC)
+  document.addEventListener('keydown', (e) => {
+    if (modal.hidden) return;
+    if (e.key === 'Escape') closeModal();
+  });
+
+})();
 })();
