@@ -20,6 +20,9 @@
   <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- ✅ Preload image LCP (à ajuster si Lighthouse indique une autre image) -->
+  <link rel="preload" as="image" href="assets/img/accueil/P1000581.webp">
+
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -110,11 +113,9 @@
               <p class="press__hint muted">Dernières parutions</p>
             </div>
 
-            <!-- Card contenant la liste scrollable -->
             <div class="photo-card press__card">
               <div class="press__list" id="pressList" role="list" aria-label="Articles et vidéo">
 
-                <!-- ACTU.FR (mets la vraie date) -->
                 <article class="press-item" role="listitem" data-date="2026-01-10">
                   <div class="press-item__media">
                     <img
@@ -150,7 +151,6 @@
                   </div>
                 </article>
 
-                <!-- OUEST-FRANCE (mets la vraie date) -->
                 <article class="press-item" role="listitem" data-date="2025-12-30">
                   <div class="press-item__media">
                     <img
@@ -166,7 +166,8 @@
                     <p class="press-item__meta">
                       <span class="badge">Article</span>
                       <span class="press-item__source">Ouest-France</span>
-                      <time class="press-item__date" datetime="2025-30-12">30/12/2025</time>
+                      <!-- ✅ date ISO corrigée -->
+                      <time class="press-item__date" datetime="2025-12-30">30/12/2025</time>
                     </p>
 
                     <h3 class="press-item__title">
@@ -186,7 +187,6 @@
                   </div>
                 </article>
 
-                <!-- VIDEO (YouTube) -->
                 <article class="press-item" role="listitem" data-date="2026-01-15">
                   <div class="press-item__media">
                     <a href="https://youtu.be/T7L8DkU6gTE" target="_blank" rel="noopener noreferrer">
@@ -224,7 +224,6 @@
                     </div>
                   </div>
                 </article>
-
 
                 <article class="press-item" role="listitem" data-date="2026-01-22">
                   <div class="press-item__media">
@@ -305,11 +304,8 @@
               </div>
             </div>
           </section>
-          <!-- ✅ FIN COIN PRESSE -->
-
         </div>
 
-        <!-- Carte candidat -->
         <aside class="hero__side" aria-label="Présentation de Bertrand Bonenfant">
           <div class="profile">
             <div class="profile__media">
@@ -356,7 +352,6 @@
       </div>
     </section>
 
-    <!-- PARCOURS -->
     <section class="section" aria-labelledby="parcours">
       <div class="container section__head">
         <h2 id="parcours">Une démarche sans étiquette</h2>
@@ -367,7 +362,7 @@
       </div>
 
       <div class="container grid home-two-cards">
-              <article class="photo-card" style="padding:18px;">
+        <article class="photo-card" style="padding:18px;">
           <h3 style="margin:0 0 10px;">Pourquoi se présenter ?</h3>
           <p class="muted" style="margin:0;">
             « La baisse de la participation, les démissions en cascade et le revote en 2025 incitent à présenter
@@ -396,7 +391,6 @@
       </div>
     </section>
 
-    <!-- PHOTOS -->
     <section class="section" aria-labelledby="photos">
       <div class="container section__head">
         <h2 id="photos">Chasné-sur-Illet</h2>
@@ -408,8 +402,20 @@
         <article class="photo-card" role="listitem">
           <div class="photo-card__media carousel" data-carousel aria-label="Photos — L’église">
             <div class="carousel__track" data-track>
-              <img class="carousel__slide is-active" src="assets/img/accueil/eglise.webp" alt="L’église de Chasné-sur-Illet" loading="lazy" decoding="async" width="1400" height="900">
-              <img class="carousel__slide" src="assets/img/accueil/eglise1.webp" alt="L’église de Chasné-sur-Illet" loading="lazy" decoding="async" width="1400" height="900">
+              <!-- ✅ image active : eager + HIGH (si c'est celle qui est LCP) -->
+              <img class="carousel__slide is-active"
+                src="assets/img/accueil/eglise.webp"
+                alt="L’église de Chasné-sur-Illet"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1400" height="900">
+              <img class="carousel__slide"
+                src="assets/img/accueil/eglise1.webp"
+                alt="L’église de Chasné-sur-Illet"
+                loading="lazy"
+                decoding="async"
+                width="1400" height="900">
             </div>
 
             <button class="carousel__btn prev" type="button" data-prev aria-label="Photo précédente (L’église)">
@@ -430,7 +436,13 @@
         <article class="photo-card" role="listitem">
           <div class="photo-card__media carousel" data-carousel aria-label="Photos — La mairie">
             <div class="carousel__track" data-track>
-              <img class="carousel__slide is-active" src="assets/img/accueil/mairie.webp" alt="La mairie de Chasné-sur-Illet" loading="lazy" decoding="async" width="1400" height="900">
+              <!-- ✅ eager (mais pas high partout) -->
+              <img class="carousel__slide is-active"
+                src="assets/img/accueil/mairie.webp"
+                alt="La mairie de Chasné-sur-Illet"
+                loading="eager"
+                decoding="async"
+                width="1400" height="900">
             </div>
 
             <button class="carousel__btn prev" type="button" data-prev aria-label="Photo précédente (La mairie)">
@@ -451,7 +463,13 @@
         <article class="photo-card" role="listitem">
           <div class="photo-card__media carousel" data-carousel aria-label="Photos — Parc et étang">
             <div class="carousel__track" data-track>
-              <img class="carousel__slide is-active" src="assets/img/accueil/P1000581.webp" alt="Parc et étang à Chasné-sur-Illet" loading="lazy" decoding="async" width="2000" height="700">
+              <!-- ✅ eager (image lourde) -->
+              <img class="carousel__slide is-active"
+                src="assets/img/accueil/P1000581.webp"
+                alt="Parc et étang à Chasné-sur-Illet"
+                loading="eager"
+                decoding="async"
+                width="2000" height="700">
               <img class="carousel__slide" src="assets/img/accueil/P1000586.webp" alt="Parc et étang à Chasné-sur-Illet" loading="lazy" decoding="async" width="2000" height="700">
               <img class="carousel__slide" src="assets/img/accueil/P1000590.webp" alt="Parc et étang à Chasné-sur-Illet" loading="lazy" decoding="async" width="2000" height="700">
               <img class="carousel__slide" src="assets/img/accueil/P1000591.webp" alt="Parc et étang à Chasné-sur-Illet" loading="lazy" decoding="async" width="2000" height="700">
@@ -472,12 +490,23 @@
           </div>
         </article>
 
-        <!-- CARD 4 (tu peux changer le thème) -->
+        <!-- CARD 4 -->
         <article class="photo-card" role="listitem">
           <div class="photo-card__media carousel" data-carousel aria-label="Photos — Centre-bourg">
             <div class="carousel__track" data-track>
-              <img class="carousel__slide is-active" src="assets/img/accueil/ecole.webp" alt="Centre-bourg de Chasné-sur-Illet (photo temporaire)" loading="lazy" decoding="async" width="1400" height="900">
-              <img class="carousel__slide" src="assets/img/accueil/ecole1.webp" alt="Centre-bourg de Chasné-sur-Illet (photo temporaire) — vue 2" loading="lazy" decoding="async" width="1400" height="900">
+              <!-- ✅ eager -->
+              <img class="carousel__slide is-active"
+                src="assets/img/accueil/ecole.webp"
+                alt="Centre-bourg de Chasné-sur-Illet (photo temporaire)"
+                loading="eager"
+                decoding="async"
+                width="1400" height="900">
+              <img class="carousel__slide"
+                src="assets/img/accueil/ecole1.webp"
+                alt="Centre-bourg de Chasné-sur-Illet (photo temporaire) — vue 2"
+                loading="lazy"
+                decoding="async"
+                width="1400" height="900">
             </div>
 
             <button class="carousel__btn prev" type="button" data-prev aria-label="Photo précédente (Centre-bourg)">
@@ -496,7 +525,6 @@
       </div>
     </section>
 
-    <!-- INFO -->
     <section class="section section--soft" aria-label="Informations rapides">
       <div class="container info">
         <div class="info__text">
@@ -515,54 +543,50 @@
   </main>
 
   <footer class="footer">
-  <div class="container footer__inner">
-    <p>© <span id="year"></span> — Réussir Chasné 2026</p>
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> — Réussir Chasné 2026</p>
 
-    <p class="small" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-      <!-- Contact mail -->
-      <a href="mailto:reussirchasne2026@gmail.com" aria-label="Écrire à Réussir Chasné 2026">
-        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16
-            c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
-        </svg>
-      </a>
+      <p class="small" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+        <a href="mailto:reussirchasne2026@gmail.com" aria-label="Écrire à Réussir Chasné 2026">
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16
+              c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+          </svg>
+        </a>
 
-      <!-- Logo R-One Vidéaste (lien externe) -->
-      <a
-        href="https://www.r-one-videaste.fr"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="R-One Vidéaste — Créateur vidéo et développeur web (nouvel onglet)"
-        style="display:inline-flex; align-items:center;"
-      >
-        <img
-          src="assets/img/rone-videaste.webp"
-          alt="R-One Vidéaste — Créateur vidéo et développeur web"
-          width="26"
-          height="26"
-          loading="lazy"
+        <a
+          href="https://www.r-one-videaste.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="R-One Vidéaste — Créateur vidéo et développeur web (nouvel onglet)"
+          style="display:inline-flex; align-items:center;"
         >
-      </a>
+          <img
+            src="assets/img/rone-videaste.webp"
+            alt="R-One Vidéaste — Créateur vidéo et développeur web"
+            width="26"
+            height="26"
+            loading="lazy"
+          >
+        </a>
 
-      <!-- Mentions légales -->
-      <a href="mentions-legales.html">Mentions légales</a>
+        <a href="mentions-legales.html">Mentions légales</a>
 
-      <!-- Facebook -->
-      <a
-        href="https://www.facebook.com/profile.php?id=61586626919755"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook Réussir Chasné 2026 (nouvel onglet)"
-      >
-        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9
-            1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10
-            10 0 0 0 22 12Z"/>
-        </svg>
-      </a>
-    </p>
-  </div>
-</footer>
+        <a
+          href="https://www.facebook.com/profile.php?id=61586626919755"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook Réussir Chasné 2026 (nouvel onglet)"
+        >
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.6 9.9v-7h-2.5V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9
+              1.1 0 2.3.2 2.3.2v2.5h-1.3c-1.3 0-1.7.8-1.7 1.6V12h2.9l-.5 2.9h-2.4v7A10
+              10 0 0 0 22 12Z"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
 
   <script src="js/main.js" defer></script>
 </body>
