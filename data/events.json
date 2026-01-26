@@ -1,3 +1,4 @@
+
 [
   {
     "title": "Réunion publique",
@@ -21,6 +22,39 @@
     "end": "2026-02-26T20:00:00",
     "location": "Mairie",
     "description": "Atelier sur un thème (mobilité, sécurité, commerces…).",
+    "link": "#agenda"
+  },
+
+  {
+    "title": "Ouverture de la campagne",
+    "start": "2026-03-02T09:00:00",
+    "end": "2026-03-02T18:00:00",
+    "location": "Chasné-sur-Illet",
+    "description": "Lancement officiel de la campagne municipale.",
+    "link": "#agenda"
+  },
+  {
+    "title": "Réunion publique",
+    "start": "2026-03-06T19:00:00",
+    "end": "2026-03-06T21:00:00",
+    "location": "Salle des fêtes",
+    "description": "Présentation du programme et échanges avec les habitants.",
+    "link": "#agenda"
+  },
+  {
+    "title": "Premier tour – Élections municipales 2026",
+    "start": "2026-03-15T08:00:00",
+    "end": "2026-03-15T18:00:00",
+    "location": "Bureaux de vote",
+    "description": "Premier tour des élections municipales.",
+    "link": "#agenda"
+  },
+  {
+    "title": "Deuxième tour – Élections municipales 2026",
+    "start": "2026-03-22T08:00:00",
+    "end": "2026-03-22T18:00:00",
+    "location": "Bureaux de vote",
+    "description": "Deuxième tour des élections municipales.",
     "link": "#agenda"
   }
 ]
