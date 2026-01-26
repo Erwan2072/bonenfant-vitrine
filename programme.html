@@ -98,62 +98,250 @@
       </div>
     </section>
 
-    <!-- AXES (transformé en cartes “photo-card” = déjà stylées) -->
-    <section class="section section--soft" aria-labelledby="axes">
+    <!-- VALEURS -->
+    <section class="section section--soft" aria-labelledby="valeurs">
       <div class="container">
         <div class="section__head">
-          <h2 id="axes">Axes de travail</h2>
-          <p class="muted">Lecture rapide.</p>
+          <h2 id="valeurs">Nos valeurs</h2>
+
+          <!-- ✅ bloc propre (HTML valide) -->
+          <div class="muted">
+            <h3>Humanisme environnemental</h3>
+            <p>Nous plaçons la personne humaine, son épanouissement dans un environnement en évolution permanente, au-dessus de toutes les autres valeurs.</p>
+            <br/>
+            <p>« La liste est apolitique. Ses membres sont mués par le seul intérêt général, la promotion et la défense des intérêts de notre commune. »</p>
+            <p class="muted">— Bertrand Bonenfant</p>
+          </div>
         </div>
 
-        <!-- gallery = grid 3 colonnes déjà gérée dans ton CSS -->
-        <div class="grid gallery" role="list" aria-label="Axes du programme">
+        <!-- ✅ C’EST ÇA QUI MANQUAIT : grid + gallery -->
+        <div class="grid gallery" role="list" aria-label="Valeurs de Réussir Chasné 2026">
+
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Accès aux soins</h3>
-              <p>Faciliter l’accès et soutenir les initiatives locales.</p>
+              <h3>Respect</h3>
+              <p>De soi, de l’autre, avec le sens du devoir et au service des administrés.</p>
             </div>
           </article>
 
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Sécurité routière</h3>
-              <p>Actions ciblées aux points sensibles et aux heures clés.</p>
+              <h3>Tolérance</h3>
+              <p>Dans la recherche d’une harmonie sociale.</p>
             </div>
           </article>
 
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Commerce & artisanat</h3>
-              <p>Redynamiser l’activité et l’attractivité.</p>
+              <h3>Entraide</h3>
+              <p>Dans la résolution collective de problèmes.</p>
             </div>
           </article>
 
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Agriculture</h3>
-              <p>Valoriser le territoire et accompagner les acteurs.</p>
+              <h3>Soutien</h3>
+              <p>Aux initiatives collectives : associations, commerces.</p>
             </div>
           </article>
 
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Rénovation énergétique</h3>
-              <p>Accélérer la rénovation des bâtiments communaux.</p>
+              <h3>Solidarité</h3>
+              <p>Au sein des élus, avec les habitants de la commune.</p>
             </div>
           </article>
 
           <article class="photo-card" role="listitem">
             <div class="photo-card__body">
-              <h3>Gestion & transparence</h3>
-              <p>Fiscalité suivie, projets financés, communication claire.</p>
+              <h3>Transparence</h3>
+              <p>De la vie municipale, des débats, des comptes publics.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem">
+            <div class="photo-card__body">
+              <h3>Bienveillance</h3>
+              <p>Entre les membres de la liste, avec la population.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem">
+            <div class="photo-card__body">
+              <h3>Dialogue</h3>
+              <p>Avec tous les habitants, les communes voisines et la communauté de communes.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem">
+            <div class="photo-card__body">
+              <h3>Confidentialité</h3>
+              <p>Ce que les habitants nous confient n’appartient qu’au conseil municipal qui en est dépositaire.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CARD PHOTOS (entre Valeurs et Programme) -->
+    <section class="section" aria-labelledby="photos">
+      <div class="container">
+        <div class="section__head">
+          <h3 id="photos">Quelques moments de terrain</h3>
+          <p class="muted">Mise sous pli, rencontres, échanges : des moments concrets sur le terrain.</p>
+        </div>
+
+        <div class="grid" role="list" aria-label="Galerie photos">
+          <article class="photo-card" role="listitem">
+            <figure class="photo-card__media carousel" aria-label="Défilement de photos">
+              <div class="carousel__viewport" tabindex="0">
+                <img
+                  class="carousel__img is-active"
+                  src="assets/img/programme/P1000570.webp"
+                  alt="Mise sous pli — photo 1"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="carousel__img"
+                  src="assets/img/programme/P1000572.webp"
+                  alt="Mise sous pli — photo 2"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="carousel__img"
+                  src="assets/img/programme/P1000574.webp"
+                  alt="Mise sous pli — photo 3"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  class="carousel__img"
+                  src="assets/img/programme/reussir-chasne.webp"
+                  alt="Réussir Chasné — visuel"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <button class="carousel__btn carousel__btn--prev" type="button" aria-label="Photo précédente">‹</button>
+              <button class="carousel__btn carousel__btn--next" type="button" aria-label="Photo suivante">›</button>
+
+              <div class="carousel__dots" role="tablist" aria-label="Choisir une photo">
+                <button type="button" class="carousel__dot is-active" aria-label="Aller à la photo 1"></button>
+                <button type="button" class="carousel__dot" aria-label="Aller à la photo 2"></button>
+                <button type="button" class="carousel__dot" aria-label="Aller à la photo 3"></button>
+                <button type="button" class="carousel__dot" aria-label="Aller à la photo 4"></button>
+              </div>
+            </figure>
+
+            <div class="photo-card__body">
+              <p class="muted">© R-One Vidéaste</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- BANDE CONTACT (remplacée par le composant .info déjà stylé) -->
+    <!-- AXES -->
+    <section class="section section--soft" aria-labelledby="axes">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="axes">Programme</h2>
+        </div>
+
+        <div class="grid gallery" role="list" aria-label="Axes du programme">
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="Accès aux soins"
+            data-axis="1">
+            <div class="photo-card__body">
+              <h3>Accès aux soins</h3>
+              <p>Parce que la santé est un droit essentiel, nous agirons pour :</p>
+              <p>• Faciliter l'installation de professionnels de santé.</p>
+              <p>• Développer des solutions de télémédecine et des permanences de santé.</p>
+              <p>• Renforcer les actions de prévention en partenariat avec les associations et les institutions sanitaires.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="Commerce & artisanat"
+            data-axis="2">
+            <div class="photo-card__body">
+              <h3>Commerce & artisanat</h3>
+              <p>Pour rendre notre commune vivante et attractive, nous voulons :</p>
+              <p>• Soutenir les commerces de proximité, enrichir l'offre commerciale et proposer des loyers attractifs dans les bâtiments communaux.</p>
+              <p>• Encourager les circuits courts, organiser des marchés réguliers sous une halle couverte, ouverte aux animations.</p>
+              <p>• Accompagner les artisans et les commerçants dans leur transition numérique et énergétique, en impliquant les chambres consulaires.</p>
+              <p>• Promouvoir l'installation d'artisans dans une zone d'activité communautaire localisée à Chasné-sur-Illet.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="École"
+            data-axis="3">
+            <div class="photo-card__body">
+              <h3>École</h3>
+              <p>Parce que l’école est l’avenir de nos enfants, nous nous engageons à :</p>
+              <p>• Consolider les liens l’équipe éducative, les agents communaux, les parents d’élèves.</p>
+              <p>• Soutenir les sorties scolaires et les projets pédagogiques pour élargir l’horizon de nos jeunes.</p>
+              <p>• Mettre en place un accueil périscolaire de qualité, à un coût cohérent pour la commune.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="Environnement durable"
+            data-axis="4">
+            <div class="photo-card__body">
+              <h3>Environnement durable</h3>
+              <p>Face aux enjeux climatiques, notre équipe s'engage à :</p>
+              <p>• Initier la rénovation énergétique des bâtiments publics et encourager le développement de nouvelles formes d'énergies.</p>
+              <p>• Favoriser les mobilités douces : pistes cyclables sûres, cheminements piétons continus, stationnements pour vélos en direction notamment de Saint-Sulpice-la-Forêt.</p>
+              <p>• Renforcer la biodiversité locale, planter des arbres dans nos espaces publics, protéger nos ressources naturelles et nos espaces agricoles.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="Accueil de nouveaux habitants"
+            data-axis="5">
+            <div class="photo-card__body">
+              <h3>Accueil de nouveaux habitants</h3>
+              <p>Pour réussir l’intégration des nouveaux arrivants, nous souhaitons :</p>
+              <p>• Développer une offre de nouveaux logements respectueuse du caractère patrimonial de Chasné-sur-Illet.</p>
+              <p>• Encourager l'installation d'une résidence seniors, adaptée aux besoins de nos aînés, ouverte aux services de santé.</p>
+              <p>• Accueillir les nouveaux arrivants en faisant la promotion de nos services, commerces et artisans.</p>
+              <p>• Garantir une information claire, complète et régulière sur la vie communale, les services et les projets en cours.</p>
+            </div>
+          </article>
+
+          <article class="photo-card" role="listitem" tabindex="0"
+            data-title="Animations"
+            data-axis="6">
+            <div class="photo-card__body">
+              <h3>Animations</h3>
+              <p>Parce que les animations sont essentielles au lien social et au vivre-ensemble, nous voulons :</p>
+              <p>• Créer un comité des fêtes, chargé de créer un calendrier annuel d'animations avec le concours de nos commerçants.</p>
+              <p>• Mettre en place de véritables actions en faveur des jeunes : terrains de sport, lieux de rencontre, animations, et les associer activement à l’avenir de la commune.</p>
+              <p>• Être un partenaire pleinement engagé auprès des associations, dont l’action est essentielle au bien-vivre à Chasné-sur-Illet, dans un esprit d’écoute et de dialogue.</p>
+              <p>• Développer un projet de jumelage afin d’ouvrir Chasné-sur-Illet sur le monde et de créer des liens durables avec d’autres communes.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section class="section" aria-label="Contact">
       <div class="container">
         <div class="info">
@@ -177,7 +365,6 @@
     <p>© <span id="year"></span> — Réussir Chasné 2026</p>
 
     <p class="small" style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
-      <!-- Contact mail -->
       <a href="mailto:reussirchasne2026@gmail.com" aria-label="Écrire à Réussir Chasné 2026">
         <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16
@@ -185,7 +372,6 @@
         </svg>
       </a>
 
-      <!-- Logo R-One Vidéaste (lien externe) -->
       <a
         href="https://www.r-one-videaste.fr"
         target="_blank"
@@ -202,10 +388,8 @@
         >
       </a>
 
-      <!-- Mentions légales -->
       <a href="mentions-legales.html">Mentions légales</a>
 
-      <!-- Facebook -->
       <a
         href="https://www.facebook.com/profile.php?id=61586626919755"
         target="_blank"

@@ -294,4 +294,197 @@
 
     loadEvents();
   }
+
+    /* =========================================================
+     Programme : zoom/overlay au clic sur une card
+     (accessible + Lighthouse friendly)
+     ========================================================= */
+
+  const makeModal = () => {
+    const modal = document.createElement("div");
+    modal.className = "card-modal";
+    modal.hidden = true;
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", "Détail du programme");
+
+    modal.innerHTML = `
+      <div class="card-modal__backdrop" data-close="true"></div>
+      <div class="card-modal__panel" role="document">
+        <button class="card-modal__close" type="button" aria-label="Fermer">✕</button>
+        <div class="card-modal__content"></div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+    return modal;
+  };
+
+  const modal = makeModal();
+  const modalContent = modal.querySelector(".card-modal__content");
+  const closeBtn = modal.querySelector(".card-modal__close");
+  const backdrop = modal.querySelector(".card-modal__backdrop");
+
+  let lastFocus = null;
+
+  const getFocusable = (root) =>
+    Array.from(
+      root.querySelectorAll(
+        'a[href], button:not([disabled]), textarea, input, select, details, summary, [tabindex]:not([tabindex="-1"])'
+      )
+    );
+
+  const openModalWithCard = (card) => {
+    if (!modalContent) return;
+
+    lastFocus = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+
+    // On copie uniquement le contenu de la card (garde ton style .photo-card__body)
+    const body = card.querySelector(".photo-card__body");
+    modalContent.innerHTML = body ? body.innerHTML : card.innerHTML;
+
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+
+    // accessibilité: masquer le contenu derrière (simple et efficace)
+    const main = document.querySelector("main");
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    if (main) main.setAttribute("aria-hidden", "true");
+    if (header) header.setAttribute("aria-hidden", "true");
+    if (footer) footer.setAttribute("aria-hidden", "true");
+
+    closeBtn?.focus();
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    modalContent.innerHTML = "";
+    document.body.style.overflow = "";
+
+    const main = document.querySelector("main");
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    if (main) main.removeAttribute("aria-hidden");
+    if (header) header.removeAttribute("aria-hidden");
+    if (footer) footer.removeAttribute("aria-hidden");
+
+    if (lastFocus) lastFocus.focus();
+  };
+
+  // Fermer : bouton + backdrop + ESC
+  closeBtn?.addEventListener("click", closeModal);
+  backdrop?.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (modal.hidden) return;
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeModal();
+      return;
+    }
+
+    // Focus trap simple (Tab reste dans le modal)
+    if (e.key === "Tab") {
+      const focusables = getFocusable(modal).filter((el) => el.offsetParent !== null);
+      if (!focusables.length) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  // Activation sur les cards du programme (section AXES)
+  // Si tu veux aussi sur "Valeurs", tu peux élargir le sélecteur.
+  const axesSection = document.getElementById("axes")?.closest("section");
+  if (axesSection) {
+    const cards = axesSection.querySelectorAll(".photo-card");
+    cards.forEach((card) => {
+      // sécurité: rendre focusable si oublié
+      if (!card.hasAttribute("tabindex")) card.setAttribute("tabindex", "0");
+
+      card.addEventListener("click", () => openModalWithCard(card));
+
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModalWithCard(card);
+        }
+      });
+    });
+  }
+
+     /* =========================================================
+     Carousel photos (défilement + autoplay accessible)
+     ========================================================= */
+  const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+  document.querySelectorAll(".carousel").forEach((carousel) => {
+    const imgs = Array.from(carousel.querySelectorAll(".carousel__img"));
+    const dots = Array.from(carousel.querySelectorAll(".carousel__dot"));
+    const prev = carousel.querySelector(".carousel__btn--prev");
+    const next = carousel.querySelector(".carousel__btn--next");
+    const viewport = carousel.querySelector(".carousel__viewport");
+    if (!imgs.length) return;
+
+    let index = imgs.findIndex((i) => i.classList.contains("is-active"));
+    if (index < 0) index = 0;
+
+    const render = (i) => {
+      index = (i + imgs.length) % imgs.length;
+      imgs.forEach((img, idx) => img.classList.toggle("is-active", idx === index));
+      dots.forEach((dot, idx) => dot.classList.toggle("is-active", idx === index));
+    };
+
+    prev?.addEventListener("click", () => render(index - 1));
+    next?.addEventListener("click", () => render(index + 1));
+    dots.forEach((dot, idx) => dot.addEventListener("click", () => render(idx)));
+
+    viewport?.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") { e.preventDefault(); render(index - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); render(index + 1); }
+    });
+
+    let timer = null;
+    const start = () => {
+      if (prefersReduced) return;
+      if (timer) return;
+      timer = window.setInterval(() => render(index + 1), 3500);
+    };
+    const stop = () => {
+      if (!timer) return;
+      window.clearInterval(timer);
+      timer = null;
+    };
+
+    start();
+
+    // pause interaction
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", start);
+
+    // après clic, on laisse respirer
+    const gentleRestart = () => {
+      stop();
+      if (prefersReduced) return;
+      window.setTimeout(start, 7000);
+    };
+    prev?.addEventListener("click", gentleRestart);
+    next?.addEventListener("click", gentleRestart);
+    dots.forEach((d) => d.addEventListener("click", gentleRestart));
+  });
+
+
+
 })();
