@@ -984,3 +984,14 @@ h1{
   max-width: 360px;   /* ajuste si besoin */
   margin-inline: auto;
 }
+
+.profile__text {
+  text-align: justify;
+  text-justify: inter-word;
+
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+
+  line-height: 1.65;
+}
